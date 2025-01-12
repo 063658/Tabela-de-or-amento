@@ -1,0 +1,134 @@
+/* Resetando estilos padrões */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* Estilizando o corpo da página */
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f4f4f4;
+   padding: 20px;
+   color: #333;
+}
+
+/* Estilizando o título da página */
+h1 {
+   text-align: center;
+   font-size: 2.5em;
+   margin-bottom: 20px;
+   color: #333;
+}
+
+/* Estilizando a tabela */
+.orcamento-tabela {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   border-collapse: separate;
+   border-spacing: 0 15px;
+   background-color: #fff;
+   border-radius: 8px;
+   overflow: hidden;
+}
+
+/* Cabeçalho da tabela */
+.orcamento-tabela thead {
+   background-color: #007BFF;
+   color: #000;
+}
+
+.orcamento-tabela th {
+   padding: 18px;
+   text-align: left;
+   font-weight: bold;
+}
+
+/* Estilo para as células da tabela */
+.orcamento-tabela td {
+   padding: 18px 20px;
+   text-align: left;
+   border: 1px solid #ddd;
+   vertical-align: middle;
+}
+
+/* Alternando as cores das linhas para facilitar a leitura */
+.orcamento-tabela tr:nth-child(even) {
+   background-color: #f9f9f9;
+}
+
+/* Estilo especial para as linhas de descrição das medidas */
+.descricao-medidas {
+   background-color: #f1f1f1;
+   font-style: italic;
+   font-size: 1em;
+   border-bottom: 2px solid #ddd;
+   padding-top: 15px;
+   padding-bottom: 15px;
+}
+
+.descricao-medidas td {
+   padding-top: 15px;
+   padding-bottom: 15px;
+}
+
+/* Estilo para o texto em negrito nas descrições de valores */
+strong {
+   color: #007BFF;
+   font-weight: normal;
+}
+
+/* Adicionando margem entre a tabela e o título */
+table {
+   margin-top: 30px;
+}
+
+
+
+.search-container {
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+.search-container input {
+   padding: 10px;
+   width: 50%;
+   font-size: 16px;
+   border: 2px solid #ccc;
+   border-radius: 5px;
+}
+
+.orcamento-tabela {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+}
+
+.orcamento-tabela th,
+.orcamento-tabela td {
+   border: 1px solid #ddd;
+   padding: 8px;
+   text-align: left;
+}
+
+.orcamento-tabela th {
+   background-color: #f2f2f2;
+}
+
+.descricao-medidas {
+   background-color: #f9f9f9;
+   display: none; /* Inicialmente ocultamos as medidas */
+}
+
+.descricao-produto {
+   width: 33%;
+   cursor: pointer; /* Indica que o item é clicável */
+}
+
+.show-details {
+   color: #007bff;
+   text-decoration: underline;
+}
+
+

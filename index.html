@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Orçamento</title>
+    <link rel="stylesheet" href="src/style.css">
+
+</head>
+
+<body>
+
+    <h1>Tabela de Orçamentos</h1>
+
+    <!-- Campo de pesquisa -->
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterTable()"
+            placeholder="Pesquisar por nome, cor ou endereço...">
+    </div>
+
+    <table class="orcamento-tabela">
+        <thead>
+            <tr>
+                <th class="descricao-produto">Condomínio</th>
+                <th class="descricao-produto">Cor da Rede</th>
+                <th class="descricao-produto">Endereço</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- Exemplo de 5 orçamentos, você pode adicionar mais como abaixo -->
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">Doce Lar</td>
+                <td>Areia</td>
+                <td>Rua Francisco J Cardoso 397, Jardim Nova Hortolândia</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">1 sacada 260x290, 2 dormitórios 120x120, 1 lavanderia basculante 1x1</td>
+                <td><strong>Valor: R$ 550,00 (3x no cartão, à vista R$ 510,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">Condomínio Alto da Abolição</td>
+                <td>Rede Branca</td>
+                <td>Rua Oscar Leite 200</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">1 sacada 219x216, 2 janelas 120x120, 2 banheiros 1x1 e outro menor 60x60</td>
+                <td><strong>Valor: R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">Ilha de Capivari</td>
+                <td>Rede Areia</td>
+                <td>Rua MMDC Cambuí</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">1 sacada sala 440x226, 1 sacada quarto casal 310x226, 1 sacada menor 2x226, 1 janela 2
+                    banheiros 1x60, 2 janelas na cozinha 1x1, 1 janela 2x1</td>
+                <td><strong>Valor: R$ 1.300,00 (Entrada 30%, restante 3x no cartão)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">Safira - Campinas</td>
+                <td>Branca</td>
+                <td>Rua Santa Rita do Passa Quatro 255</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">1 lavanderia 120x120, 1 sacada 2.30x2.30, 1 quarto 1.20x1.20, 1 quarto 1.70x1.20</td>
+                <td><strong>R$ 390,00 (à vista), R$ 430,00 (3x no cartão)</strong></td>
+            </tr>
+
+            <!-- 95 novas linhas de orçamentos (total de 100) -->
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">Condomínio Jardim das Flores</td>
+                <td>Azul</td>
+                <td>Avenida dos Imigrantes 500, Jardim Flores</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">1 sacada 300x300, 1 dormitório 150x150, 1 cozinha 200x200</td>
+                <td><strong>R$ 700,00 (3x no cartão, à vista R$ 660,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">Condomínio Vila dos Pássaros</td>
+                <td>Verde</td>
+                <td>Rua dos Passarinhos 150, Vila dos Pássaros</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">2 sacadas 220x230, 1 janela 150x150, 3 quartos 120x120</td>
+                <td><strong>R$ 800,00 (3x no cartão, à vista R$ 760,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">Condomínio Vila Mar</td>
+                <td>Branca</td>
+                <td>Rua Marinho 10, Vila Mar</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">1 sacada 280x300, 2 quartos 120x120</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+            <tr>
+                <td class="show-details" onclick="toggleDetails(this)">descreva condominio</td>
+                <td>cor rede</td>
+                <td>endereço</td>
+            </tr>
+            <tr class="descricao-medidas">
+                <td colspan="2">medida</td>
+                <td><strong>R$ 450,00 (3x no cartão, à vista R$ 420,00)</strong></td>
+            </tr>
+
+
+
+            <!-- Você pode continuar assim até 100 orçamentos, por exemplo... -->
+
+        </tbody>
+    </table>
+
+    <script>
+        // Função para filtrar as linhas da tabela conforme o texto digitado
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            table = document.querySelector('.orcamento-tabela');
+            tr = table.getElementsByTagName('tr');
+
+            // Loop pelas linhas da tabela
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName('td');
+                if (td.length > 0) {
+                    txtValue = "";
+                    for (var j = 0; j < td.length; j++) {
+                        txtValue += td[j].textContent || td[j].innerText;
+                    }
+
+                    // Se o texto da linha contiver o que foi digitado na pesquisa, exibe a linha
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // Função para alternar a exibição das informações detalhadas ao clicar no nome do condomínio
+        function toggleDetails(element) {
+            var row = element.parentNode.nextElementSibling; // Encontra a próxima linha (medidas)
+
+            // Se a linha estiver oculta, mostramos, caso contrário, ocultamos
+            if (row.style.display === "" || row.style.display === "none") {
+                row.style.display = "table-row";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
